@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice de nombres</title>
+	<script>
+		function calculer() {
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			if (isNaN(num1) || isNaN(num2)) {
+				document.getElementById("error").innerHTML =("Veuillez saisir des nombres valides.");
+				return;
+			}
+			if (num2 == 0) {
+				document.getElementById("error").innerHTML =("Impossible de diviser par zéro.");
+				return;
+			}
+			document.getElementById("somme").innerHTML = "Somme : " + (parseFloat(num1) + parseFloat(num2));
+			document.getElementById("multiplication").innerHTML = "Multiplication : " + (parseFloat(num1) * parseFloat(num2));
+			document.getElementById("division").innerHTML = "Division : " + (parseFloat(num1) / parseFloat(num2));
+			document.getElementById("soustraction").innerHTML = "Soustraction : " + (parseFloat(num1) - parseFloat(num2));
+		}
+	</script>
+</head>
+<body>
+	<h1>Calculatrice de nombres</h1>
+	<form>
+		<label for="num1">Premier nombre : </label>
+		<input type="text" id="num1"><br>
+		<label for="num2">Deuxième nombre : </label>
+		<input type="text" id="num2"><br>
+		<input type="button" value="Calculer" onclick="calculer()"><br><br>
+		<span id="somme"></span><br>
+		<span id="multiplication"></span><br>
+		<span id="division"></span><br>
+		<span id="soustraction"></span><br>
+		<span id="error"></span><br>
+
+	</form>
+</body>
+</html>
+
